@@ -27,7 +27,7 @@ let charmSound;
 
 
 function preload() {
-    charmSound = loadSound("./experiment4/Sounds/rollingSound.mp3");
+    charmSound = loadSound('cmpm169/experiment4/Sounds/rollingSound.mp3');
   }
 
 // setup() function is called once when the program starts
@@ -43,7 +43,7 @@ function setup() {
 
     for (let cards of ['Alhaitham', 'Ayato', 'Baizhu', 'Childe', 'Cyno', 'Diluc','Eula', 'Ganyu', 'Hu Tao', 'Itto', 'Jean', 'Kazuha', 'Keqing','Klee', 'Lyney', 'Nahida', 'Neuvillette', 'Raiden', 'Venti','Wanderer', 'Yae Miko', 'Zhongli']) 
     {
-        deck.push(loadImage("./experiment4/Tarot/${cards}.jpg"));
+        deck.push(loadImage('cmpm169/experiment4/Tarot/${cards}.jpg'));
         cardName.push(cards);
     }
   
