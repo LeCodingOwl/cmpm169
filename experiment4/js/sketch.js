@@ -43,8 +43,7 @@ function setup() {
 
     for (let cards of ['Alhaitham', 'Ayato', 'Baizhu', 'Childe', 'Cyno', 'Diluc','Eula', 'Ganyu', 'Hu Tao', 'Itto', 'Jean', 'Kazuha', 'Keqing','Klee', 'Lyney', 'Nahida', 'Neuvillette', 'Raiden', 'Venti','Wanderer', 'Yae Miko', 'Zhongli']) 
     {
-        deck.push(loadImage('GenshinCard/${cards}.jpg'));
-        //deck.push(loadImage('GenshinCard/Alhaitham.jpg'));
+        deck.push(loadImage('GenshinCard/' + cards[cards] +'.jpg'));
         cardName.push(cards);
     }
   
