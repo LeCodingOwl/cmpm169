@@ -26,7 +26,7 @@ let controls = new Controls();
 
 function preload() {
     //img = loadImage('retroSun.png');
-    song = loadSound('Toothless Dancing - Driftveil City (phonk remix by Mishashi Sensei).mp3');
+    song = loadSound('sounds/Toothless Dancing - Driftveil City (phonk remix by Mishashi Sensei).mp3');
 }
 
 // setup() function is called once when the program starts
@@ -84,7 +84,7 @@ function shiftNoiseSpace() {
         let xOffset = 0;
         for (let x = 0; x < cols; ++x) {
             terrain[x][y] = map(noise(spectrum[x], yOffset), 0, 1, -spectrum[y] * 2, spectrum[y] * 2);
-            xOffset += controls.noiseDelta;
+            //xOffset += controls.noiseDelta;
         }
         //yOffset += controls.noiseDelta;
     }
