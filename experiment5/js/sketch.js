@@ -45,7 +45,8 @@ function setup() {
     fft.setInput(song);
     song.play();
   
-    cols = w / scale;
+    //cols = w / scale;
+    cols = 255;
     rows = h / scale;
     for (let x = 0; x < cols; ++x) {
         terrain[x] = [];
