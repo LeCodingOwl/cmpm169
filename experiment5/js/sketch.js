@@ -26,7 +26,7 @@ let controls = new Controls();
 
 function preload() {
     //img = loadImage('retroSun.png');
-    song = loadSound('sounds/Toothless Dancing - Driftveil City (phonk remix by Mishashi Sensei).mp3');
+    song = loadSound('sounds/Toothless Dancing.mp3');
 }
 
 // setup() function is called once when the program starts
