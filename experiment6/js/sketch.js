@@ -11,6 +11,7 @@ let delay = 0;
 
 function preload() {
     beep = loadSound('sounds/beep.mp3');
+    
     longerBeep = loadSound('sounds/longerBeep.mp3');
 }
 
