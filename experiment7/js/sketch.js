@@ -7,7 +7,7 @@ let covidData;
 function preload() {
   // Load the JSON data file before the sketch starts
   //covidData = loadJSON("https://covid.ourworldindata.org/data/owid-covid-data.json", "json");
-  covidData = loadTable('path/to/your/downloaded/file.csv', 'csv', 'header');
+  covidData = loadTable('api/owid-covid-data.csv', 'csv', 'header');
 }
 
 // setup() function is called once when the program starts
