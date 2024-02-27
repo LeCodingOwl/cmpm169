@@ -1,55 +1,67 @@
 // sketch.js - purpose and description here
-// Author: Jimmy Nguyen
-// Date: 2/26/24
+// Author: Your Name
+// Date:
 
-let covidData;
+// Here is how you might set up an OOP p5.js project
+// Note that p5.js looks for a file called sketch.js
 
-function preload() {
-  // Load the JSON data file before the sketch starts
-  //covidData = loadJSON('https://covid.ourworldindata.org/data/owid-covid-data.json');
-  covidData = loadTable('api/owid-covid-data.csv', 'csv', 'header');
+// Constants - User-servicable parts
+// In a longer project I like to put these in a separate file
+const VALUE1 = 1;
+const VALUE2 = 2;
+
+// Globals
+let myInstance;
+let canvasContainer;
+
+class MyClass {
+    constructor(param1, param2) {
+        this.property1 = param1;
+        this.property2 = param2;
+    }
+
+    myMethod() {
+        // code to run when method is called
+    }
 }
 
 // setup() function is called once when the program starts
 function setup() {
-  canvasContainer = $("#canvas-container");
-  let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
-  canvas.parent("canvas-container");
+    // place our canvas, making it fit our container
+    canvasContainer = $("#canvas-container");
+    let canvas = createCanvas(canvasContainer.width(), canvasContainer.height());
+    canvas.parent("canvas-container");
+    // resize canvas is the page is resized
+    $(window).resize(function() {
+        console.log("Resizing...");
+        resizeCanvas(canvasContainer.width(), canvasContainer.height());
+    });
+    // create an instance of the class
+    myInstance = new MyClass(VALUE1, VALUE2);
 
-  $(window).resize(function() {
-      console.log("Resizing...");
-      resizeCanvas(canvasContainer.width(), canvasContainer.height());
-  });
-
-    
-
-    for (let row of covidData.rows) {
-      let country = row.get('location');
-      let totalCases = row.getNum('total_cases');
-      console.log(`Country: ${country}, Total Cases: ${totalCases}`);
-    }
-    //noLoop(); // Draw only once
+    var centerHorz = windowWidth / 2;
+    var centerVert = windowHeight / 2;
 }
-/*
+
 // draw() function is called repeatedly, it's the main animation loop
 function draw() {
-  background(240);
+    background(220);    
+    // call a method on the instance
+    myInstance.myMethod();
 
-  // Example: Visualizing total cases over time for a specific country
-  let country = 'USA';
-  let dataForCountry = covidData[country];
-
-  if (dataForCountry) {
-    // Plotting total cases over time
-    stroke(0);
-    noFill();
-    beginShape();
-    for (let i = 0; i < dataForCountry.length; i++) {
-      let x = map(i, 0, dataForCountry.length - 1, 0, width);
-      let y = map(dataForCountry[i].total_cases, 0, 1e7, height, 0);
-      vertex(x, y);
-    }
-    endShape();
-  }
+    // Put drawings here
+    var centerHorz = canvasContainer.width() / 2 - 125;
+    var centerVert = canvasContainer.height() / 2 - 125;
+    fill(234, 31, 81);
+    noStroke();
+    rect(centerHorz, centerVert, 250, 250);
+    fill(255);
+    textStyle(BOLD);
+    textSize(140);
+    text("p5*", centerHorz + 10, centerVert + 200);
 }
-*/
+
+// mousePressed() function is called once after every time a mouse button is pressed
+function mousePressed() {
+    // code to run when mouse is pressed
+}
